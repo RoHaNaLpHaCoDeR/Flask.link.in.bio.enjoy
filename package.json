@@ -1,0 +1,13 @@
+{
+  "name": "flask-app",
+  "version": "1.0.0",
+  "main": "app.py",
+  "scripts": {
+    "start": "flask run",
+    "vercel-build": "pip install -r requirements.txt"
+  },
+  "dependencies": {
+    "flask": "^2.0.1",
+    "werkzeug": "^2.0.1"
+  }
+}
