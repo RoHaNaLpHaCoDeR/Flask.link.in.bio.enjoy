@@ -10,8 +10,6 @@ body {
 
 .container {
     position: fixed;
-    overflow: hidden;
-    display: flex;
     text-align: center;
     background-color: #ffffff;
     padding: 15px;
