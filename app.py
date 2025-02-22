@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('indexnew.html')
+    return render_template('indexupdated.html')
 
 @app.route('/redirect')
 def redirect_to_link():

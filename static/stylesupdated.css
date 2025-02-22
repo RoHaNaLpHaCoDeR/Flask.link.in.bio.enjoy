@@ -1,0 +1,124 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #000000, #000000, #000000);
+    color: rgb(0, 0, 0);
+    overflow-x: hidden;
+}
+
+/* Centered Container */
+.container {
+    width: 60%;
+    height: 23vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background: rgb(255, 255, 255);
+    margin: 350px auto;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.containerspace {
+    width: 80%;
+    height: 120vh;
+}
+
+/* Hide Next Steps Initially */
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Timer */
+.timer {
+    font-size: 15px;
+    margin : 0px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #000000, #000000b7);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulse 1s infinite alternate;
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 80%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #00ffae, #2b8c22);
+    transition: width 1s linear;
+}
+
+/* Redirect Message */
+.redirect-msg {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* Custom Button */
+.button {
+    padding: 4px 2px;
+    background: linear-gradient(90deg, #f00000, #ff0000e0);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.button:hover {
+    background: linear-gradient(90deg, #00f020, #00f020);
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+/* Mobile Optimization */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 60%;
+        height: 23vh;
+    }
+    .containerspace {
+        width: 80%;
+        height: 120vh;
+    }
+    .button {
+        font-size: 15px;
+        padding: 4px 2px;
+    }
+    
+    .timer {
+        font-size: 15px;
+    }
+    
+    .progress-container {
+        width: 90%;
+    }
+}
