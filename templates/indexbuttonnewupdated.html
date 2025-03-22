@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dirty Links</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleresponsive.css') }}">
+    <script>
+        let adLinks = [
+            "https://dipperflightrecommend.com/ycx26qur?key=f6fb6023e509f75f5eb0f4ca0e3e1a89",
+            "https://dipperflightrecommend.com/th0kbfd65?key=85f4fb1a83def4114d3eb01e6a22fd47",
+            "https://your-adsterra-direct-link-3.com"
+        ];
+
+        function startTimer(step) {
+            let timer = 5;
+            let timerElement = document.getElementById(`timer${step}`);
+            let progressBar = document.getElementById(`progressBar${step}`);
+            let button = document.getElementById(`continueButton${step}`);
+
+            button.disabled = true;
+            timerElement.textContent = `Please wait for ${timer} seconds...`;
+            progressBar.style.width = '0%';
+
+            let interval = setInterval(() => {
+                timer--;
+                timerElement.textContent = `Please wait for ${timer} seconds...`;
+                progressBar.style.width = `${(5 - timer) * 20}%`;
+
+                if (timer === 0) {
+                    clearInterval(interval);
+                    button.disabled = false;
+                    timerElement.textContent = '';
+                }
+            }, 1000);
+        }
+
+        function handleButtonClick(step) {
+            window.open(adLinks[step - 1], "_blank"); // Open Adsterra link in a new tab
+
+            if (step < 3) {
+                document.getElementById(`step${step}`).style.display = "none";
+                document.getElementById(`step${step + 1}`).style.display = "block";
+                startTimer(step + 1);
+
+                // Smooth scroll to the next step
+                setTimeout(() => {
+                    document.getElementById(`step${step + 1}`).scrollIntoView({ behavior: "smooth" });
+                }, 500);
+            } else {
+                window.location.href = "/redirect";
+            }
+        }
+
+        window.onload = function() {
+            startTimer(1);
+        }
+    </script>
+    <style>
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+            max-width:20%
+        }
+        .hidden {
+            display: none;
+        }
+        .progress {
+            width: 100%;
+            background: #ddd;
+            height: 10px;
+            margin: 10px 0;
+        }
+        .progress-bar {
+            height: 10px;
+            width: 0%;
+            background: green;
+            transition: width 1s;
+        }
+        .ad-space {
+            height: 300px; /* Increased space for ads */
+            background: #ccc;
+            margin: 100px 0;
+            text-align: center;
+            line-height: 300px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Step 1 -->
+    <div id="step1" class="container">
+        <h2>Step 1</h2>
+        <p id="timer1"></p>
+        <div class="progress">
+            <div id="progressBar1" class="progress-bar"></div>
+        </div>
+        <button id="continueButton1" onclick="handleButtonClick(1)" disabled>Click here to continue</button>
+    </div>
+
+    <div class="ad-space"><script async="async" data-cfasync="false" src="//dipperflightrecommend.com/09c80561272f6e4f93d06dc29bfbbc24/invoke.js"></script>
+        <div id="container-09c80561272f6e4f93d06dc29bfbbc24"></div></div>
+    <div class="ad-space"><script type="text/javascript">
+	atOptions = {
+		'key' : '1c290729e12cdc7109ffb7b225736222',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//dipperflightrecommend.com/1c290729e12cdc7109ffb7b225736222/invoke.js"></script></div>
+    <div class="ad-space"><script async="async" data-cfasync="false" src="//dipperflightrecommend.com/09c80561272f6e4f93d06dc29bfbbc24/invoke.js"></script>
+        <div id="container-09c80561272f6e4f93d06dc29bfbbc24"></div></div>
+    <div class="ad-space"><script type="text/javascript">
+	atOptions = {
+		'key' : '1c290729e12cdc7109ffb7b225736222',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//dipperflightrecommend.com/1c290729e12cdc7109ffb7b225736222/invoke.js"></script></div>
+    <div class="ad-space"><script async="async" data-cfasync="false" src="//dipperflightrecommend.com/09c80561272f6e4f93d06dc29bfbbc24/invoke.js"></script>
+        <div id="container-09c80561272f6e4f93d06dc29bfbbc24"></div></div>
+    <div class="ad-space"><script type="text/javascript">
+	atOptions = {
+		'key' : '1c290729e12cdc7109ffb7b225736222',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//dipperflightrecommend.com/1c290729e12cdc7109ffb7b225736222/invoke.js"></script></div>
+    <div class="ad-space"><script async="async" data-cfasync="false" src="//dipperflightrecommend.com/09c80561272f6e4f93d06dc29bfbbc24/invoke.js"></script>
+        <div id="container-09c80561272f6e4f93d06dc29bfbbc24"></div></div>
+    <div class="ad-space"><script type="text/javascript">
+	atOptions = {
+		'key' : '1c290729e12cdc7109ffb7b225736222',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//dipperflightrecommend.com/1c290729e12cdc7109ffb7b225736222/invoke.js"></script></div>
+
+    <!-- Step 2 -->
+    <div id="step2" class="container hidden">
+        <h2>Step 2</h2>
+        <p id="timer2"></p>
+        <div class="progress">
+            <div id="progressBar2" class="progress-bar"></div>
+        </div>
+        <button id="continueButton2" onclick="handleButtonClick(2)" disabled>Click here to continue</button>
+    </div>
+
+    <div class="ad-space"><script async="async" data-cfasync="false" src="//dipperflightrecommend.com/09c80561272f6e4f93d06dc29bfbbc24/invoke.js"></script>
+        <div id="container-09c80561272f6e4f93d06dc29bfbbc24"></div></div>
+    <div class="ad-space"><script type="text/javascript">
+	atOptions = {
+		'key' : '3492a19577da653e999d7861c366ddb2',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//dipperflightrecommend.com/3492a19577da653e999d7861c366ddb2/invoke.js"></script></div>
+    <div class="ad-space"><script async="async" data-cfasync="false" src="//dipperflightrecommend.com/09c80561272f6e4f93d06dc29bfbbc24/invoke.js"></script>
+        <div id="container-09c80561272f6e4f93d06dc29bfbbc24"></div></div>
+    <div class="ad-space"><script type="text/javascript">
+	atOptions = {
+		'key' : '3492a19577da653e999d7861c366ddb2',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//dipperflightrecommend.com/3492a19577da653e999d7861c366ddb2/invoke.js"></script></div>
+    <div class="ad-space"><script async="async" data-cfasync="false" src="//dipperflightrecommend.com/09c80561272f6e4f93d06dc29bfbbc24/invoke.js"></script>
+        <div id="container-09c80561272f6e4f93d06dc29bfbbc24"></div></div>
+    <div class="ad-space"><script type="text/javascript">
+	atOptions = {
+		'key' : '3492a19577da653e999d7861c366ddb2',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//dipperflightrecommend.com/3492a19577da653e999d7861c366ddb2/invoke.js"></script></div>
+    <div class="ad-space"><script async="async" data-cfasync="false" src="//dipperflightrecommend.com/09c80561272f6e4f93d06dc29bfbbc24/invoke.js"></script>
+        <div id="container-09c80561272f6e4f93d06dc29bfbbc24"></div></div>
+    <div class="ad-space"><script type="text/javascript">
+	atOptions = {
+		'key' : '3492a19577da653e999d7861c366ddb2',
+		'format' : 'iframe',
+		'height' : 250,
+		'width' : 300,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//dipperflightrecommend.com/3492a19577da653e999d7861c366ddb2/invoke.js"></script></div>
+
+    <!-- Step 3 -->
+    <div id="step3" class="container hidden">
+        <h2>Step 3</h2>
+        <p id="timer3"></p>
+        <div class="progress">
+            <div id="progressBar3" class="progress-bar"></div>
+        </div>
+        <button id="continueButton3" onclick="handleButtonClick(3)" disabled>Click here to continue</button>
+    </div>
+
+</body>
+</html>

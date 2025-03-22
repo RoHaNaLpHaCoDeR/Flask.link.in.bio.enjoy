@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dirty Links</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleresponsive.css') }}">
+    <script>
+        let clicks = 0;
+        let adLinks = [
+            "https://your-adsterra-direct-link-1.com",
+            "https://your-adsterra-direct-link-2.com",
+            "https://your-adsterra-direct-link-3.com"
+        ];
+
+        function startTimer(step) {
+            let timer = 10;
+            let timerElement = document.getElementById(`timer${step}`);
+            let progressBar = document.getElementById(`progressBar${step}`);
+            let button = document.getElementById(`continueButton${step}`);
+
+            button.disabled = true;
+            timerElement.textContent = `Please wait for ${timer} seconds...`;
+            progressBar.style.width = '0%';
+
+            let interval = setInterval(() => {
+                timer--;
+                timerElement.textContent = `Please wait for ${timer} seconds...`;
+                progressBar.style.width = `${(10 - timer) * 10}%`;
+
+                if (timer === 0) {
+                    clearInterval(interval);
+                    button.disabled = false;
+                    timerElement.textContent = '';
+                }
+            }, 1000);
+        }
+
+        function handleButtonClick(step) {
+            window.open(adLinks[step - 1], "_blank"); // Open Adsterra link in a new tab
+            document.getElementById(`step${step}`).style.display = "none";
+            
+            if (step < 3) {
+                document.getElementById(`step${step + 1}`).style.display = "block";
+                startTimer(step + 1);
+            } else {
+                window.location.href = "/redirect";
+            }
+        }
+
+        window.onload = function() {
+            startTimer(1); // Start Step 1 timer on page load
+        }
+    </script>
+    <style>
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+        }
+        .hidden {
+            display: none;
+        }
+        .progress {
+            width: 100%;
+            background: #ddd;
+            height: 10px;
+            margin: 10px 0;
+        }
+        .progress-bar {
+            height: 10px;
+            width: 0%;
+            background: green;
+            transition: width 1s;
+        }
+        .ad-space {
+            height: 200px; /* Space for banner ads */
+            background: #ccc;
+            margin: 30px 0;
+            text-align: center;
+            line-height: 200px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Step 1 -->
+    <div id="step1" class="container">
+        <h2>Step 1</h2>
+        <p id="timer1"></p>
+        <div class="progress">
+            <div id="progressBar1" class="progress-bar"></div>
+        </div>
+        <button id="continueButton1" onclick="handleButtonClick(1)" disabled>Click here to continue</button>
+    </div>
+
+    <div class="ad-space">Ad Space 1 (Place your Adsterra Banner Here)</div>
+
+    <!-- Step 2 -->
+    <div id="step2" class="container hidden">
+        <h2>Step 2</h2>
+        <p id="timer2"></p>
+        <div class="progress">
+            <div id="progressBar2" class="progress-bar"></div>
+        </div>
+        <button id="continueButton2" onclick="handleButtonClick(2)" disabled>Click here to continue</button>
+    </div>
+
+    <div class="ad-space">Ad Space 2 (Place your Adsterra Banner Here)</div>
+
+    <!-- Step 3 -->
+    <div id="step3" class="container hidden">
+        <h2>Step 3</h2>
+        <p id="timer3"></p>
+        <div class="progress">
+            <div id="progressBar3" class="progress-bar"></div>
+        </div>
+        <button id="continueButton3" onclick="handleButtonClick(3)" disabled>Click here to continue</button>
+    </div>
+
+</body>
+</html>
